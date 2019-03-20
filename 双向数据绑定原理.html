@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="aa" />
+    <span id="bb">{{hello}}</span>
+    <script>
+        var obj = {};
+        Object.defineProperty(obj, 'hello', {
+            set: function (val) {
+                document.getElementById('bb').innerHTML = val;
+                document.getElementById('aa').value = val;
+            }
+        });
+        document.getElementById('aa').onkeyup = function (e) {
+            obj.hello = e.target.value;
+        };
+        obj.hello = "";
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <input type="text" name="" id="myInput">
+    <span id="mySpan"></span>
+    <script>
+        //基础版数据绑定
+        /*var myInput = document.getElementById('myInput')
+        var mySpan = document.getElementById('mySpan')
+        var v 
+        myInput.addEventListener('keyup',e=>{
+            v=e.target.value
+            mySpan.innerText = v
+        })*/
+        var myInput = document.getElementById('myInput');
+        var mySpan = document.getElementById('mySpan');
+        var obj= {};
+
+        Object.defineProperty(obj,'inp',{
+            set:v=>{
+                mySpan.innerText = v
+                console.log(obj)
+            }
+        })
+        myInput.addEventListener('keyup',e=>{
+            mySpan.innerText = e.target.value
+            
+        })
+        
+    </script>
+</body>
+</html>
