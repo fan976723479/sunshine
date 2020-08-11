@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<img src="../images/1597136869.jpg">
+<script>
+    //堆 是存储引用类型值得空间 比如对象 数组 函数
+    //栈 存储基本类型值和执行代码得空间
+    // var a = {},
+    //     b = '0',
+    //     c = 0;
+    // a[b] = '1';
+    // a[c] = '2';
+    // console.log(a[b]) //2
+    //存入堆内存的时候 属性名是不能重复的C的变量就把B的变量替换掉 所以结果是2
+
+    //Symbol创建唯一值
+    // let a = {},
+    //     b = Symbol('1'),
+    //     c = Symbol('1');
+    // a[b] = 1
+    // a[c] = 2
+    // console.log(a[b])//1
+
+    //引用类型值需存储字符串
+    let a = {},
+        b = {
+            n: '1'
+        },
+        c = {
+            m: '2'
+        }
+    a[b] = '001'
+    a[c] = '002'
+    console.log(a[b]) //002
+    //覆盖掉001
+</script>
+</body>
+</html>
